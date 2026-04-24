@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-quarto preview "index.ipynb" --host 127.0.0.1 --port 4200 --no-browser --no-watch-inputs &
+quarto preview --host 127.0.0.1 --port 4200 --no-browser --no-watch-inputs &
 QUARTO_PID=$!
 
 trap "kill $QUARTO_PID 2>/dev/null" EXIT
