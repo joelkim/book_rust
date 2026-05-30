@@ -31,4 +31,20 @@ website:
     search: true
     contents:
       - "index.ipynb"
-      - "install.ipynb"
+      - section: "개발환경"
+        contents:
+          - "devenv/install.ipynb"
+          - "devenv/hello.ipynb"
+          - "devenv/debugging.ipynb"
+      - section: "러스트 문법"
+        contents:
+          - "lang/datatype.ipynb"
+          - "lang/variable.ipynb"
+          - "lang/function.ipynb"
+          - "lang/ownership.ipynb"
+          - "lang/struct.ipynb"
+          - "lang/collection.ipynb"
+          - "lang/enum.ipynb"
+          - "lang/reference.ipynb"
+          - "lang/slice.ipynb"
+          - "lang/string.ipynb"
