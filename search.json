@@ -1,0 +1,409 @@
+[
+  {
+    "objectID": "lang/struct.html",
+    "href": "lang/struct.html",
+    "title": "구조체",
+    "section": "",
+    "text": "구조체는 사용자가 정의하는 타입이므로 먼저 정확한 타입 정의가 있어야 함",
+    "crumbs": [
+      "러스트 문법",
+      "구조체"
+    ]
+  },
+  {
+    "objectID": "lang/struct.html#구조체-타입-정의",
+    "href": "lang/struct.html#구조체-타입-정의",
+    "title": "구조체",
+    "section": "",
+    "text": "구조체는 사용자가 정의하는 타입이므로 먼저 정확한 타입 정의가 있어야 함",
+    "crumbs": [
+      "러스트 문법",
+      "구조체"
+    ]
+  },
+  {
+    "objectID": "lang/struct.html#구조체-변수-정의",
+    "href": "lang/struct.html#구조체-변수-정의",
+    "title": "구조체",
+    "section": "구조체 변수 정의",
+    "text": "구조체 변수 정의",
+    "crumbs": [
+      "러스트 문법",
+      "구조체"
+    ]
+  },
+  {
+    "objectID": "lang/struct.html#메서드와-연관함수",
+    "href": "lang/struct.html#메서드와-연관함수",
+    "title": "구조체",
+    "section": "메서드와 연관함수",
+    "text": "메서드와 연관함수\n\n객체지향언어와의 비교\n\n러스트는 객체지향언어처럼 클래스를 제공하지는 않지만\n메서드와 연관함수를 지원\n\n메서드: 객체지향언어 클래스의 인스턴스 메서드에 해당\n\n항상 특정 객체와 연관\n첫번째 인수로는 연관된 객체에 대한 참조를 받음\n\n연관함수: 객체지향언어 클래스의 정적 메서드에 해당\n\n특정 객체와 연관되지 않음\n첫번째 인수가 객체 참조가 아님\n\n\n\n\n\n메서드와 연관함수의 구현\n\nimple 키워드로 구현\nimpl 구조체_타입명 {\n  fn 메서드명 (&self, 인수1, 인수2) {\n    ...\n  }\n}\nimpl 구조체_타입명 {\n  fn 연관함수명 (인수1, 인수2) {\n    ...\n  }\n}",
+    "crumbs": [
+      "러스트 문법",
+      "구조체"
+    ]
+  },
+  {
+    "objectID": "lang/ownership.html",
+    "href": "lang/ownership.html",
+    "title": "소유권",
+    "section": "",
+    "text": "변수는 이름과 값으로 구성\n러스트에서는 변수의 소유권 개념이 존재\n값에 대한 소유권을 가진 변수는 다른 프로그래밍 언어에서 이야기하는 일반적인 변수\n러스트에서는 변수가 값에 대한 소유권을 잃은 경우가 발생할 수 있음\n소유권을 잃은 변수는 더이상 사용할 수 없음\n하나의 값에 대한 소유권을 가진 변수는 단 하나 뿐임",
+    "crumbs": [
+      "러스트 문법",
+      "소유권"
+    ]
+  },
+  {
+    "objectID": "lang/ownership.html#변수의-소유권",
+    "href": "lang/ownership.html#변수의-소유권",
+    "title": "소유권",
+    "section": "",
+    "text": "변수는 이름과 값으로 구성\n러스트에서는 변수의 소유권 개념이 존재\n값에 대한 소유권을 가진 변수는 다른 프로그래밍 언어에서 이야기하는 일반적인 변수\n러스트에서는 변수가 값에 대한 소유권을 잃은 경우가 발생할 수 있음\n소유권을 잃은 변수는 더이상 사용할 수 없음\n하나의 값에 대한 소유권을 가진 변수는 단 하나 뿐임",
+    "crumbs": [
+      "러스트 문법",
+      "소유권"
+    ]
+  },
+  {
+    "objectID": "lang/ownership.html#변수의-사용",
+    "href": "lang/ownership.html#변수의-사용",
+    "title": "소유권",
+    "section": "변수의 사용",
+    "text": "변수의 사용\n\n변수가 저장한 값을 기반으로 새로운 (임시)변수를 만드는 것\n대표적인 변수 사용\n\n다른 변수의 대입에 사용되는 우변값을 구성하는 경우\n다른 복합 자료형 변수의 대입에 사용되는 하나의 속성값을 구성하는 경우\n함수의 인수로 전달\n함수의 반환값으로 전달",
+    "crumbs": [
+      "러스트 문법",
+      "소유권"
+    ]
+  },
+  {
+    "objectID": "lang/ownership.html#복사와-이동",
+    "href": "lang/ownership.html#복사와-이동",
+    "title": "소유권",
+    "section": "복사와 이동",
+    "text": "복사와 이동\n\n변수가 사용될 때 변수의 자료형에 따라 다음 두 가지 중 하나가 발생한다.\n\n복사 (copy)\n\n새로 만들어지는 (임시)변수는 사용되는 변수의 값을 복사하여 자신만의 값을 가지게 됨\n사용된 변수는 해당 값에 대한 소유권을 그대로 가지고 있음\n\n이동 (move)\n\n새로 만들어지는 (임시)변수는 사용되는 변수의 값 자체를 사용함\n사용된 변수는 해당 값에 대한 소유권을 잃고 값이 없는 변수가 되어 더 이상 사용 불가\n\n\n변수 자체가 아닌 변수의 참조가 사용되는 경우에는 복사 또는 이동과 상관 없음",
+    "crumbs": [
+      "러스트 문법",
+      "소유권"
+    ]
+  },
+  {
+    "objectID": "lang/ownership.html#복사이동의-판별",
+    "href": "lang/ownership.html#복사이동의-판별",
+    "title": "소유권",
+    "section": "복사/이동의 판별",
+    "text": "복사/이동의 판별\n\n변수 사용시 복사가 되는가 이동이 되는가는 사용되는 변수의 자료형에 따라 결정됨\n\n원시 자료형은 무조건 복사\n사용자 정의 자료형은 자료형에 따라 다름.\n\ncopy trait를 구현한 자료형은 복사\ncopy trait를 구현하지 않은 자료형은 이동\n\n참조 자료형은 복사 또는 이동이 아닌 참조 현상이 발생",
+    "crumbs": [
+      "러스트 문법",
+      "소유권"
+    ]
+  },
+  {
+    "objectID": "lang/ownership.html#힙스택과의-연관성",
+    "href": "lang/ownership.html#힙스택과의-연관성",
+    "title": "소유권",
+    "section": "힙/스택과의 연관성",
+    "text": "힙/스택과의 연관성\n\n일반적으로 힙에 정보를 가지는 자료형은 copy trait를 구현하지 않는 경우가 많음 (반드시 그런 것은 아님)\n따라서 변수가 사용될 때 이동이 발생하고 소유권을 잃게 됨\n따라서 이러한 소유권 상실을 막기 위해 보통은 변수 자체를 사용하지 않고 참조를 사용함",
+    "crumbs": [
+      "러스트 문법",
+      "소유권"
+    ]
+  },
+  {
+    "objectID": "lang/ownership.html#소유권-개념을-만든-이유",
+    "href": "lang/ownership.html#소유권-개념을-만든-이유",
+    "title": "소유권",
+    "section": "소유권 개념을 만든 이유",
+    "text": "소유권 개념을 만든 이유\n\n힙에 정보를 가지는 자료형은 값이 들어갈 메모리를 동적으로 할당하고 해재하여야 함\n복수의 변수가 모두 값에 접근할 수 있으면 메모리 해제시에 복잡한 경우가 발생함\n파이썬, 자바 등에서는 참조개수와 가비지 콜렉션을 통해 이를 해결함\n러스트에서는 소유권 개념을 통해 항상 하나의 변수만 값이 있는 메모리에 접근할 수 있도록 함",
+    "crumbs": [
+      "러스트 문법",
+      "소유권"
+    ]
+  },
+  {
+    "objectID": "devenv/install.html",
+    "href": "devenv/install.html",
+    "title": "설치",
+    "section": "",
+    "text": "rustc: 컴파일러\nrustup: 업데이트\ncargo: 패키지 매니저",
+    "crumbs": [
+      "개발환경",
+      "설치"
+    ]
+  },
+  {
+    "objectID": "devenv/install.html#프로그램",
+    "href": "devenv/install.html#프로그램",
+    "title": "설치",
+    "section": "",
+    "text": "rustc: 컴파일러\nrustup: 업데이트\ncargo: 패키지 매니저",
+    "crumbs": [
+      "개발환경",
+      "설치"
+    ]
+  },
+  {
+    "objectID": "devenv/debugging.html#힙",
+    "href": "devenv/debugging.html#힙",
+    "title": "디버깅",
+    "section": "힙",
+    "text": "힙",
+    "crumbs": [
+      "개발환경",
+      "디버깅"
+    ]
+  },
+  {
+    "objectID": "devenv/hello.html#러스트-컴파일과-실행",
+    "href": "devenv/hello.html#러스트-컴파일과-실행",
+    "title": "hello, world",
+    "section": "러스트 컴파일과 실행",
+    "text": "러스트 컴파일과 실행",
+    "crumbs": [
+      "개발환경",
+      "hello, world"
+    ]
+  },
+  {
+    "objectID": "devenv/hello.html#main-함수",
+    "href": "devenv/hello.html#main-함수",
+    "title": "hello, world",
+    "section": "main 함수",
+    "text": "main 함수",
+    "crumbs": [
+      "개발환경",
+      "hello, world"
+    ]
+  },
+  {
+    "objectID": "devenv/hello.html#변수와-자료형",
+    "href": "devenv/hello.html#변수와-자료형",
+    "title": "hello, world",
+    "section": "변수와 자료형",
+    "text": "변수와 자료형",
+    "crumbs": [
+      "개발환경",
+      "hello, world"
+    ]
+  },
+  {
+    "objectID": "devenv/hello.html#println-마크로",
+    "href": "devenv/hello.html#println-마크로",
+    "title": "hello, world",
+    "section": "println! 마크로",
+    "text": "println! 마크로",
+    "crumbs": [
+      "개발환경",
+      "hello, world"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html",
+    "href": "lang/datatype.html",
+    "title": "자료형",
+    "section": "",
+    "text": "러스트 자료형(data type)은 크게 3가지 그룹으로 나눌 수 있다.\n원시 자료형(primitive types)\n\n스칼라 자료형\n\n부울리언\n정수\n부호없는 정수\n부동소수점\n단일문자\n\n복합 자료형\n\n튜플(tuple)\n배열(array)\n슬라이스(slice)\n\n\n사용자 정의 자료형(custom types)\n\n구조체(struct)\n열거(enum)\n\n참조(reference)",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#러스트-자료형",
+    "href": "lang/datatype.html#러스트-자료형",
+    "title": "자료형",
+    "section": "",
+    "text": "러스트 자료형(data type)은 크게 3가지 그룹으로 나눌 수 있다.\n원시 자료형(primitive types)\n\n스칼라 자료형\n\n부울리언\n정수\n부호없는 정수\n부동소수점\n단일문자\n\n복합 자료형\n\n튜플(tuple)\n배열(array)\n슬라이스(slice)\n\n\n사용자 정의 자료형(custom types)\n\n구조체(struct)\n열거(enum)\n\n참조(reference)",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#부울리언",
+    "href": "lang/datatype.html#부울리언",
+    "title": "자료형",
+    "section": "부울리언",
+    "text": "부울리언\n\n: bool 형태로 선언\ntrue, false 두 가지 값을 가짐\n출력시에도 true, false 두 가지 문자열로 표시됨",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#정수",
+    "href": "lang/datatype.html#정수",
+    "title": "자료형",
+    "section": "정수",
+    "text": "정수\n\n부호 있는 정수: i8, i16, i32, i64, i128, isize\n부호 없는 정수: u8, u16, u32, u64, u128, usize",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#부동소수점",
+    "href": "lang/datatype.html#부동소수점",
+    "title": "자료형",
+    "section": "부동소수점",
+    "text": "부동소수점\n\nf32, f64",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#단일-문자",
+    "href": "lang/datatype.html#단일-문자",
+    "title": "자료형",
+    "section": "단일 문자",
+    "text": "단일 문자\n\n: char 형태로 선언\n러스트의 문자는 32비트\nC/C++과 달리 정수형과 호환되지 않는 독자적인 자료형\nUTF-8 인코딩만 사용 가능\n다른 인코딩을 사용하는 경우 char 자료형이 아니라 u8 (1바이트 부호없는 정수) 자료형에 숫자로 저장해야 함",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#튜플",
+    "href": "lang/datatype.html#튜플",
+    "title": "자료형",
+    "section": "튜플",
+    "text": "튜플\n\n서로 다른 자료형의 묶음\n: (원소1의 자료형, 원소2의 자료형, 원소3의 자료형) 형태로 선언\n튜플변수명.인덱스숫자 형태로 원소 접근",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#배열",
+    "href": "lang/datatype.html#배열",
+    "title": "자료형",
+    "section": "배열",
+    "text": "배열\n\n같은 자료형의 묶음\n:[원소의 자료형; 길이] 형태로 선언\n배열변수명[인덱스숫자] 형태로 원소 접근",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#구조체",
+    "href": "lang/datatype.html#구조체",
+    "title": "자료형",
+    "section": "구조체",
+    "text": "구조체\n\n여러가지 자료형의 필드를 포함하는 컨테이너 자료형\n사용자 정의 자료형\n구조체 타입을 정의한 후 해당 구조체 변수를 초기화\n타입 정의\nstruct 구조체_타입명 {\n  필드명1: 필드타입1,\n  필드명2: 필드타입2,\n  필드명3: 필드타입3,\n}\n타입 정의 예시\nstruct Complex {\n  re: f32,\n  im: f32,\n}\n구조체 변수 초기화\nlet 구조체_변수명 = 구조체_타입명 {\n  필드명1: 필드값1,\n  필드명2: 필드값2,\n  필드명3: 필드값3,\n}\n구조체 변수 초기화 예시\nlet c1 = Complex {\n  re: 0.1,\n  im: 2.2,\n}\n구조체 필드 접근시에는 구조체_변수명.필드명 형식을 사용",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#제너릭-구조체",
+    "href": "lang/datatype.html#제너릭-구조체",
+    "title": "자료형",
+    "section": "제너릭 구조체",
+    "text": "제너릭 구조체\n\n제너릭(generic)\n\n구조체의 필드타입을 미리 정하지 않고 변수 초기화시에 받을 수도 있음\n\n제너릭 타입 정의\nstruct 구조체_타입명&lt;필드타입변수1, 필드타입변수2&gt; {\n  필드명1: 필드타입변수1,\n  필드명2: 필드타입변수2,\n  필드명3: 필드타입3,\n}\n제너릭 타입 정의 예시\nstruct Complex&lt;T&gt; {\n  re: T,\n  im: T,\n}\n제너릭 타입 변수 초기화 예시\nlet c1 = Complex&lt;i32&gt; {\n  re: 1,\n  im: 2,\n}",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#콜렉션",
+    "href": "lang/datatype.html#콜렉션",
+    "title": "자료형",
+    "section": "콜렉션",
+    "text": "콜렉션\n\n러스트 언어 자체가 제공하는 자료형이 아니라 구조체로 정의된 자료형\n러스트와 함께 설치되는 표준 패키지에서 제공\n예시\n\nString: 문자열을 처리하는 구조체\nVec: 길이가 정해지지 않은 열을 처리하는 제너릭 구조체\nHashMap: 키-값 형식의 사전 정보를 처리하는 제너릭 구조체",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#열거형",
+    "href": "lang/datatype.html#열거형",
+    "title": "자료형",
+    "section": "열거형",
+    "text": "열거형\n\n러스트의 열거형은 C 언어의 enum 타입과 union 타입을 합쳐놓은 기능\nenum 타입처럼 가질 수 있는 값의 종류(category)를 제공\n동시에 union 타입처럼 해당 종류일 때의 값도 같이 제공\nC 언어의 union 타입은 현재 어떤 타입인지를 알려주지 않지만\n러스트의 열거형은 현재 어떤 타입인지를 종류로 알려주면서 동시에 그 타입의 정보도 가지고 있음",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#참조",
+    "href": "lang/datatype.html#참조",
+    "title": "자료형",
+    "section": "참조",
+    "text": "참조\n\n변수의 메모리 주소를 저장하는 자료형\n변수의 단순한 별칭(alias)인 C++ 언어의 참조와는 달리 실제로 메모리 주소를 저장하는 별도의 메모리를 가지는 객체라는 점에서 /C++ 언어의 포인터와 유사함\nC/C++ 언어의 포인터와는 달리 각종 제약이 존재함",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#슬라이스",
+    "href": "lang/datatype.html#슬라이스",
+    "title": "자료형",
+    "section": "슬라이스",
+    "text": "슬라이스\n\n배열과 유사하지만 길이가 정해지지 않는 데이터를 다루는 자료형\n:[원소의 자료형] 형태로 선언\n슬라이스는 그 자체 타입으로는 절대 변수를 만들 수 없음\n항상 슬라이스에 대한 참조 변수만 만들 수 있음\nstr 자료형\n\n길이가 정해지지 않은 문자열을 저장하는 자료형\n대표적인 슬라이스 자료형\n그 자체로는 변수 생성 불가\n항상 참조 변수만 만들 수 있음",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/datatype.html#타-언어와의-차이점",
+    "href": "lang/datatype.html#타-언어와의-차이점",
+    "title": "자료형",
+    "section": "타 언어와의 차이점",
+    "text": "타 언어와의 차이점\n\n클래스 미제공\n\nC++, Python, Java 등의 객체지향언어처럼 클래스를 제공하지 않는다\n구조체를 객체지향언어의 클래스처럼 활용\n\n\n\n자료형 추정\n\n할당되는 값을 이용하여 컴파일러가 자료형을 추정하는 것이 가능할 때는 사용자가 자료형의 명시하지 않아도 됨\n실행 중 값이 입력되는 경우 등 추정이 불가능할 경우에는 자료형을 명시해야 함",
+    "crumbs": [
+      "러스트 문법",
+      "자료형"
+    ]
+  },
+  {
+    "objectID": "lang/variable.html#불변변수",
+    "href": "lang/variable.html#불변변수",
+    "title": "변수",
+    "section": "불변변수",
+    "text": "불변변수",
+    "crumbs": [
+      "러스트 문법",
+      "변수"
+    ]
+  },
+  {
+    "objectID": "lang/variable.html#가변변수",
+    "href": "lang/variable.html#가변변수",
+    "title": "변수",
+    "section": "가변변수",
+    "text": "가변변수",
+    "crumbs": [
+      "러스트 문법",
+      "변수"
+    ]
+  },
+  {
+    "objectID": "lang/variable.html#쉐도잉",
+    "href": "lang/variable.html#쉐도잉",
+    "title": "변수",
+    "section": "쉐도잉",
+    "text": "쉐도잉",
+    "crumbs": [
+      "러스트 문법",
+      "변수"
+    ]
+  },
+  {
+    "objectID": "lang/variable.html#상수",
+    "href": "lang/variable.html#상수",
+    "title": "변수",
+    "section": "상수",
+    "text": "상수",
+    "crumbs": [
+      "러스트 문법",
+      "변수"
+    ]
+  }
+]
